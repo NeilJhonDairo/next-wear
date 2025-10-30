@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.nextwear.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.nextwear.HelloController"
+           prefWidth="1080"
+           prefHeight="1920"
+           style="-fx-background-color: white;">
+    <children>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+        <!-- Center container -->
+        <VBox alignment="CENTER" spacing="30">
+
+            <!-- Title -->
+            <TextFlow textAlignment="CENTER">
+                <Text text="NEXT" fill="black" style="-fx-font-size: 40px; -fx-font-weight: bold;" />
+                <Text text="WEAR" fill="#007bff" style="-fx-font-size: 40px; -fx-font-weight: bold;" />
+            </TextFlow>
+
+            <!-- Login Form -->
+            <VBox spacing="16" alignment="CENTER">
+
+                <!-- Email -->
+                <TextField fx:id="emailField"
+                           promptText="Email"
+                           prefWidth="360"
+                           prefHeight="44"
+                           style="-fx-border-color: #000000; -fx-border-radius: 5; -fx-background-radius: 5; -fx-focus-color: transparent;" />
+
+                <!-- Password -->
+                <PasswordField fx:id="passwordField"
+                               promptText="Password"
+                               prefWidth="360"
+                               prefHeight="44"
+                               style="-fx-border-color: #000000; -fx-border-radius: 5; -fx-background-radius: 5; -fx-focus-color: transparent;" />
+
+                <!-- Forgot Password + Login button -->
+                <HBox spacing="10" alignment="CENTER_RIGHT" prefWidth="360">
+                    <Hyperlink text="Forgot Password"
+                               style="-fx-text-fill: #333333; -fx-font-size: 13px; -fx-border-color: transparent;" />
+                    <Button text="Log In"
+                            onAction="#onLogin"
+                            prefWidth="90"
+                            prefHeight="36"
+                            style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" />
+                </HBox>
+
+                <!-- Sign Up -->
+                <HBox alignment="CENTER" spacing="5">
+                    <Label text="Don’t have an account?" style="-fx-text-fill: #555555; -fx-font-size: 13px;" />
+                    <Hyperlink text="Sign Up" style="-fx-text-fill: #007bff; -fx-font-size: 13px; -fx-border-color: transparent;" />
+                </HBox>
+            </VBox>
+
+            <!-- Footer -->
+            <Label text="©2025 NEXTWEAR. All Rights Reserved."
+                   style="-fx-text-fill: gray; -fx-font-size: 12px;"
+                   alignment="CENTER"
+                   padding="20" />
+
+        </VBox>
+
+    </children>
+</StackPane>
