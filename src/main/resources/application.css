@@ -1,0 +1,83 @@
+.root-background {
+    -fx-background-color: #0E0E0E;
+}
+
+
+.navbar {
+    -fx-background-color: #000000;
+}
+
+
+.logo-white {
+    -fx-text-fill: white;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+.logo-blue {
+    -fx-text-fill: #2979FF;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #2979FF;
+    -fx-background-radius: 25;
+    -fx-padding: 12 30;
+}
+
+
+.nav-button-active {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-background-radius: 25;
+    -fx-padding: 12 30;
+}
+
+
+.cart-button {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-background-radius: 50;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+}
+
+.cart-button:hover {
+    -fx-background-color: #1A5ACC;
+}
+
+.hero-title {
+    -fx-text-fill: white;
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+}
+
+.hero-subtitle {
+    -fx-text-fill: #B0B0B0;
+    -fx-font-size: 22px;
+}
+
+.cta-button {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-padding: 15 40;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.cta-button:hover {
+    -fx-background-color: #1A5ACC;
+}
