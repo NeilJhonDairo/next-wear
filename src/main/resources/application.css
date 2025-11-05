@@ -1,40 +1,32 @@
-    -fx-background-color: #0E0E0E;
-}
 
-.navbar {
-    -fx-background-color: #000000;
-}
-
-.logo-white {
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-.logo-blue {
-    -fx-font-weight: bold;
-}
-
+.nav-btn {
     -fx-background-color: transparent;
     -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-background-radius: 20;
+    -fx-padding: 6 18;
+    -fx-cursor: hand;
 }
 
-    -fx-text-fill: white;
-    -fx-background-radius: 25;
-}
-
-    -fx-text-fill: white;
-    -fx-background-radius: 50;
-}
-
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-    -fx-text-fill: #B0B0B0;
-}
-
+/* Hover effect */
+.nav-btn:hover {
     -fx-background-color: #2979FF;
     -fx-text-fill: white;
-    -fx-padding: 15 40;
-    -fx-background-radius: 10;
 }
+
+/* Active button */
+.nav-btn-active {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 6 18;
+}
+
+
+.right-image {
+     -fx-translate-y: -150px;
+     -fx-translate-x: 40px;
+ }
+
+
+
