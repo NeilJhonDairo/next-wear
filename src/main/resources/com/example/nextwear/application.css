@@ -1,0 +1,140 @@
+/* Global */
+.root {
+    -fx-background-color: #0E0E0E;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Text color */
+.text-white {
+    -fx-text-fill: white;
+}
+.text-blue {
+    -fx-text-fill: #2979FF;
+}
+.text-gray {
+    -fx-text-fill: #B0B0B0;
+}
+
+/*  NAVBAR  */
+.navbar {
+    -fx-background-color: #000000;
+    -fx-padding: 35 60 25 60;
+    -fx-spacing: 30;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.logo-box {
+    -fx-spacing: 4;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.logo-white {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+.logo-blue {
+    -fx-text-fill: #2979FF;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+/* Navbar Buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+.nav-button:hover {
+    -fx-text-fill: #2979FF;
+}
+.nav-active {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 6 18;
+    -fx-font-size: 16px;
+}
+.cart-button {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-background-radius: 50;
+    -fx-font-size: 22px;
+    -fx-padding: 4 12;
+}
+
+/* HERO SECTION  */
+.hero {
+    -fx-background-color: #111111;
+    -fx-padding: 0 120 0 120;
+    -fx-spacing: 150;
+    -fx-pref-height: 300;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.hero-title {
+    -fx-text-fill: white;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+.hero-subtitle {
+    -fx-text-fill: #B0B0B0;
+    -fx-font-size: 16px;
+}
+.hero-button {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 8 28;
+    -fx-background-radius: 8;
+}
+.hero-button:hover {
+    -fx-background-color: #1E5FCC;
+}
+
+.hero-logo-left {
+    -fx-text-fill: white;
+    -fx-font-size: 64px;
+    -fx-font-weight: bold;
+}
+.hero-logo-right {
+    -fx-text-fill: #2979FF;
+    -fx-font-size: 64px;
+    -fx-font-weight: bold;
+}
+
+/*  PRODUCT SECTION  */
+.product-section {
+    -fx-background-color: #1A1A1A;
+    -fx-padding: 30 60 60 60;
+    -fx-spacing: 30;
+    -fx-alignment: CENTER;
+}
+
+.product-list {
+    -fx-alignment: CENTER;
+    -fx-spacing: 25;
+}
+
+/* Product Card */
+.product-card {
+    -fx-background-color: #2B2424;
+    -fx-background-radius: 16;
+    -fx-padding: 15;
+    -fx-alignment: CENTER;
+    -fx-spacing: 10;
+}
+.product-card:hover {
+    -fx-background-color: #3A2F2F;
+    -fx-cursor: hand;
+}
+
+.product-name {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+.product-price {
+    -fx-text-fill: #2979FF;
+    -fx-font-size: 16px;
+}
