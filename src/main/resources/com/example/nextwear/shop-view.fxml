@@ -10,17 +10,11 @@
       xmlns:fx="http://javafx.com/fxml/1"
       prefWidth="1365" prefHeight="768"
       spacing="0"
-      stylesheets="@application.css">
-
+      style="-fx-background-color: #0E0E0E; -fx-font-family: 'Segoe UI', sans-serif;">
 
     <!-- NAVBAR -->
-    <HBox prefHeight="100" alignment="CENTER_LEFT" spacing="30"
-          style="-fx-background-color: #000000;">
-        <padding>
-            <Insets top="35" right="60" bottom="25" left="60"/>
-        </padding>
-
-        <!-- LOGO -->
+    <HBox alignment="CENTER_LEFT" spacing="30"
+          style="-fx-background-color: #000000; -fx-padding: 35 60 25 60;">
         <HBox alignment="CENTER_LEFT" spacing="4">
             <Label text="NEXT" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
             <Label text="WEAR" style="-fx-text-fill: #2979FF; -fx-font-size: 30px; -fx-font-weight: bold;"/>
@@ -28,7 +22,6 @@
 
         <Region HBox.hgrow="ALWAYS"/>
 
-        <!-- NAVIGATION BUTTONS -->
         <HBox spacing="25" alignment="CENTER_RIGHT">
             <Button text="Home" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;"/>
             <Button text="Shop" style="-fx-background-color: #2979FF; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 6 18; -fx-font-size: 16px;"/>
@@ -39,13 +32,8 @@
     </HBox>
 
     <!-- HERO SECTION -->
-    <HBox alignment="CENTER_LEFT" spacing="150" prefHeight="300"
-          style="-fx-background-color: #111111;">
-        <padding>
-            <Insets left="120" right="120"/>
-        </padding>
-
-        <!-- LEFT TEXT -->
+    <HBox alignment="CENTER_LEFT" spacing="180" prefHeight="450"
+          style="-fx-background-color: #111111; -fx-padding: 40 150 40 150;">
         <VBox alignment="CENTER_LEFT" spacing="12">
             <Label text="Shop  Our Latest Tees"
                    style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
@@ -57,18 +45,18 @@
 
         <Region HBox.hgrow="ALWAYS"/>
 
-        <!-- text Logo -->
-        <VBox alignment="CENTER_RIGHT" spacing="0">
+        <VBox alignment="CENTER_RIGHT" spacing="5">
             <Label text="NEXT" style="-fx-text-fill: white; -fx-font-size: 64px; -fx-font-weight: bold;"/>
             <Label text="WEAR" style="-fx-text-fill: #2979FF; -fx-font-size: 64px; -fx-font-weight: bold;"/>
         </VBox>
     </HBox>
 
     <!-- PRODUCT SECTION -->
-    <VBox alignment="CENTER" spacing="30" style="-fx-background-color: #1A1A1A; -fx-padding: 30  60 60;">
+    <VBox alignment="CENTER" spacing="30"
+          style="-fx-background-color: #1A1A1A; -fx-padding: 30 60 60 60;">
         <HBox alignment="CENTER" spacing="25">
 
-            <!-- 1 -->
+            <!-- Product 1 -->
             <VBox alignment="CENTER" spacing="10"
                   style="-fx-background-color: #2B2424; -fx-padding: 15; -fx-background-radius: 16;">
                 <ImageView fitWidth="200" fitHeight="200">
@@ -76,11 +64,13 @@
                         <Image url="@NextWearShopimage/Riseabove.png"/>
                     </image>
                 </ImageView>
-                <Label text="T-Shirt Name" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
-                <Label text="₱150" style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
+                <Label text="T-Shirt Name"
+                       style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <Label text="₱150"
+                       style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
             </VBox>
 
-            <!-- 2 -->
+            <!-- Product 2 -->
             <VBox alignment="CENTER" spacing="10"
                   style="-fx-background-color: #2B2424; -fx-padding: 15; -fx-background-radius: 16;">
                 <ImageView fitWidth="200" fitHeight="200">
@@ -88,11 +78,13 @@
                         <Image url="@NextWearShopimage/VisionLeaks.png"/>
                     </image>
                 </ImageView>
-                <Label text="T-Shirt Name" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
-                <Label text="₱150" style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
+                <Label text="T-Shirt Name"
+                       style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <Label text="₱150"
+                       style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
             </VBox>
 
-            <!--  3 -->
+            <!-- Product 3 -->
             <VBox alignment="CENTER" spacing="10"
                   style="-fx-background-color: #2B2424; -fx-padding: 15; -fx-background-radius: 16;">
                 <ImageView fitWidth="200" fitHeight="200">
@@ -100,11 +92,13 @@
                         <Image url="@NextWearShopimage/ToyotaAE86.png"/>
                     </image>
                 </ImageView>
-                <Label text="T-Shirt Name" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
-                <Label text="₱150" style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
+                <Label text="T-Shirt Name"
+                       style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <Label text="₱150"
+                       style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
             </VBox>
 
-            <!-- 4 -->
+            <!-- Product 4 -->
             <VBox alignment="CENTER" spacing="10"
                   style="-fx-background-color: #2B2424; -fx-padding: 15; -fx-background-radius: 16;">
                 <ImageView fitWidth="200" fitHeight="200">
@@ -112,9 +106,12 @@
                         <Image url="@NextWearShopimage/Nobound.png"/>
                     </image>
                 </ImageView>
-                <Label text="T-Shirt Name" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
-                <Label text="₱150" style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
+                <Label text="T-Shirt Name"
+                       style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <Label text="₱150"
+                       style="-fx-text-fill: #2979FF; -fx-font-size: 16px;"/>
             </VBox>
+
         </HBox>
     </VBox>
 
