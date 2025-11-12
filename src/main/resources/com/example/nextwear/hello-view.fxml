@@ -15,16 +15,25 @@
       style="-fx-background-color: #2e2727; -fx-padding: 30;">
 
     <!-- Title -->
-    <Label text="My Purchase"
+    <Label text="Purchased Item"
            style="-fx-font-size: 40px; -fx-text-fill: #2a7bff; -fx-font-weight: bold;" />
 
     <!-- Scrollable vertical list -->
     <ScrollPane fitToWidth="true"
                 vbarPolicy="AS_NEEDED"
                 hbarPolicy="NEVER"
-                style="-fx-background: transparent; -fx-border-color: transparent;"
+                style="
+                    -fx-background: #2e2727;
+                    -fx-border-color: transparent;
+                    -fx-control-inner-background: #2e2727;
+                    -fx-background-insets: 0;
+                    -fx-border-insets: 0;
+                    -fx-padding: 0;
+                    -fx-background-radius: 0;
+                "
                 prefHeight="520">
-        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-background-color: transparent;">
+        <!-- VBox inside scrollpane -->
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-background-color: #2e2727;">
 
             <!-- Purchase Card 1 -->
             <HBox spacing="20" alignment="CENTER_LEFT"
