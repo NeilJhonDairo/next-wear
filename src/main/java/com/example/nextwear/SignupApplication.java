@@ -1,4 +1,4 @@
-package com.example.nextwear;
+ package com.example.nextwear;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
