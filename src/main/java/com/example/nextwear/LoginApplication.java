@@ -9,11 +9,12 @@ public class LoginApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("NextWear Shop");
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("/com/example/nextwear/login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+        stage.setTitle("NextWear Login");
         stage.setScene(scene);
-        stage.setMaximized(true);
+        stage.setMaximized(true); // start fullscreen
+        stage.centerOnScreen();
         stage.show();
     }
 

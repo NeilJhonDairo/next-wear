@@ -9,23 +9,24 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class LoginController {
+public class ForgotPasswordController {
 
     @FXML
-    private void onLogin(ActionEvent event) {
-        System.out.println("Login button clicked!");
+    private void onSendResetLink(ActionEvent event) {
+        System.out.println("Reset link sent!");
     }
 
     @FXML
-    private void onForgotPassword(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/nextwear/forgot-password.fxml"));
+    private void onBackToLogin(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/nextwear/login-view.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+
         Scene scene = new Scene(root, 1920, 1080);
         stage.setScene(scene);
-        stage.setMaximized(false);
+        stage.setMaximized(true);
         stage.centerOnScreen();
         stage.show();
     }
