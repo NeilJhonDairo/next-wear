@@ -26,7 +26,7 @@
 
         <!-- Menu -->
         <HBox spacing="20" alignment="CENTER_RIGHT" pickOnBounds="false">
-        <Button text="Home" styleClass="nav-btn"/>
+        <Button text="Home" styleClass="nav-btn-active"/>
             <Button text="Shop" styleClass="nav-btn"/>
             <Button text="My Purchase" styleClass="nav-btn"/>
             <Button text="Log Out" styleClass="nav-btn"/>

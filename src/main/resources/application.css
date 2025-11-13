@@ -1,11 +1,12 @@
-
 .nav-btn {
     -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-size: 25px;
+    -fx-font-weight: 600;
     -fx-background-radius: 20;
     -fx-padding: 6 18;
     -fx-cursor: hand;
+    -fx-transition: all 0.3s ease; /* (optional for smoother hover) */
 }
 
 /* Hover effect */
@@ -18,8 +19,11 @@
 .nav-btn-active {
     -fx-background-color: #2979FF;
     -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-font-weight: 600;
     -fx-background-radius: 20;
     -fx-padding: 6 18;
+
 }
 
 
