@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="TOP_CENTER"
+      spacing="20"
+      prefWidth="900"
+      prefHeight="700"
+      style="-fx-background-color: #2e2727; -fx-padding: 30;">
+
+    <!-- Title -->
+    <Label text="Purchased Item"
+           style="-fx-font-size: 40px; -fx-text-fill: #2a7bff; -fx-font-weight: bold;" />
+
+    <!-- Scrollable vertical list -->
+    <ScrollPane fitToWidth="true"
+                vbarPolicy="AS_NEEDED"
+                hbarPolicy="NEVER"
+                style="
+                    -fx-background: #2e2727;
+                    -fx-border-color: transparent;
+                    -fx-control-inner-background: #2e2727;
+                    -fx-background-insets: 0;
+                    -fx-border-insets: 0;
+                    -fx-padding: 0;
+                    -fx-background-radius: 0;
+                "
+                prefHeight="520">
+        <!-- VBox inside scrollpane -->
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-background-color: #2e2727;">
+
+            <!-- Purchase Card 1 -->
+            <HBox spacing="20" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #3b3333; -fx-padding: 16; -fx-background-radius: 14;"
+                  prefWidth="700" prefHeight="140">
+                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" />
+                <VBox alignment="CENTER_LEFT" spacing="6" prefWidth="500">
+                    <Label text="Black T-Shirt"
+                           style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    <Label text="₱ 150"
+                           style="-fx-font-size: 18px; -fx-text-fill: #1fb7ff;" />
+                    <Label text="Purchased: September 25, 2025"
+                           style="-fx-font-size: 13px; -fx-text-fill: #cfcfcf;" />
+                    <Label text="Delivered"
+                           style="-fx-font-size: 14px; -fx-text-fill: #3ad13a;" />
+                </VBox>
+            </HBox>
+
+            <!-- Purchase Card 2 -->
+            <HBox spacing="20" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #3b3333; -fx-padding: 16; -fx-background-radius: 14;"
+                  prefWidth="700" prefHeight="140">
+                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" />
+                <VBox alignment="CENTER_LEFT" spacing="6" prefWidth="500">
+                    <Label text="Grey T-Shirt"
+                           style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    <Label text="₱ 160"
+                           style="-fx-font-size: 18px; -fx-text-fill: #1fb7ff;" />
+                    <Label text="Purchased: October 1, 2025"
+                           style="-fx-font-size: 13px; -fx-text-fill: #cfcfcf;" />
+                    <Label text="Delivered"
+                           style="-fx-font-size: 14px; -fx-text-fill: #3ad13a;" />
+                </VBox>
+            </HBox>
+
+            <!-- Purchase Card 3 -->
+            <HBox spacing="20" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #3b3333; -fx-padding: 16; -fx-background-radius: 14;"
+                  prefWidth="700" prefHeight="140">
+                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" />
+                <VBox alignment="CENTER_LEFT" spacing="6" prefWidth="500">
+                    <Label text="White T-Shirt"
+                           style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    <Label text="₱ 170"
+                           style="-fx-font-size: 18px; -fx-text-fill: #1fb7ff;" />
+                    <Label text="Purchased: October 5, 2025"
+                           style="-fx-font-size: 13px; -fx-text-fill: #cfcfcf;" />
+                    <Label text="Delivered"
+                           style="-fx-font-size: 14px; -fx-text-fill: #3ad13a;" />
+                </VBox>
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- Close Button -->
+    <Button text="Close"
+            style="-fx-background-color: #2a7bff; -fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 10 30; -fx-background-radius: 10;" />
+</VBox>
