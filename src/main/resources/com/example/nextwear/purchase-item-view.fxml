@@ -1,95 +1,90 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      alignment="TOP_CENTER"
-      spacing="20"
-      prefWidth="900"
-      prefHeight="700"
-      style="-fx-background-color: #2e2727; -fx-padding: 30;">
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.nextwear.PurchaseController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            stylesheets="@application.css"
+            style="-fx-background: #0e0e0e; -fx-border-color: transparent;">
 
-    <!-- Title -->
-    <Label text="Purchased Item"
-           style="-fx-font-size: 40px; -fx-text-fill: #2a7bff; -fx-font-weight: bold;" />
+    <VBox spacing="0" style="-fx-background-color: #0e0e0e;">
 
-    <!-- Scrollable vertical list -->
-    <ScrollPane fitToWidth="true"
-                vbarPolicy="AS_NEEDED"
-                hbarPolicy="NEVER"
-                style="
-                    -fx-background: #2e2727;
-                    -fx-border-color: transparent;
-                    -fx-control-inner-background: #2e2727;
-                    -fx-background-insets: 0;
-                    -fx-border-insets: 0;
-                    -fx-padding: 0;
-                    -fx-background-radius: 0;
-                "
-                prefHeight="520">
-        <!-- VBox inside scrollpane -->
-        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-background-color: #2e2727;">
+        <!-- NAVIGATION BAR -->
+        <HBox alignment="CENTER_LEFT" spacing="30"
+              style="-fx-background-color: #000000; -fx-padding: 25 60;">
+            <HBox alignment="CENTER_LEFT" spacing="4">
+                <Label text="NEXT" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+                <Label text="WEAR" style="-fx-text-fill: #2979FF; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+            </HBox>
 
-            <!-- Purchase Card 1 -->
-            <HBox spacing="20" alignment="CENTER_LEFT"
-                  style="-fx-background-color: #3b3333; -fx-padding: 16; -fx-background-radius: 14;"
-                  prefWidth="700" prefHeight="140">
-                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" />
-                <VBox alignment="CENTER_LEFT" spacing="6" prefWidth="500">
-                    <Label text="Black T-Shirt"
-                           style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
-                    <Label text="₱ 150"
-                           style="-fx-font-size: 18px; -fx-text-fill: #1fb7ff;" />
-                    <Label text="Purchased: September 25, 2025"
-                           style="-fx-font-size: 13px; -fx-text-fill: #cfcfcf;" />
-                    <Label text="Delivered"
-                           style="-fx-font-size: 14px; -fx-text-fill: #3ad13a;" />
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <HBox spacing="20" alignment="CENTER_RIGHT">
+                <Button text="Home" styleClass="nav-btn" onAction="#goHome"/>
+                <Button text="Shop" styleClass="nav-btn" onAction="#goShop"/>
+                <Button text="My Purchase" styleClass="nav-btn-active" onAction="#goPurchase"/>
+                <Button text="Log Out" styleClass="nav-btn" onAction="#logout"/>
+            </HBox>
+        </HBox>
+
+        <!-- HEADER SECTION -->
+        <HBox alignment="CENTER" style="-fx-background-color: #000000; -fx-padding: 60 80;">
+            <VBox alignment="CENTER_LEFT" spacing="10" HBox.hgrow="ALWAYS">
+                <Label text="My Purchases"
+                       style="-fx-text-fill: white; -fx-font-size: 42px; -fx-font-weight: bold;"/>
+                <Label text="Your order history and tracking information"
+                       style="-fx-text-fill: #cfcfcf; -fx-font-size: 16px;"/>
+            </VBox>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <VBox alignment="CENTER_RIGHT" spacing="0">
+                <Label text="ORDER" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+                <Label text="HISTORY" style="-fx-text-fill: #2979FF; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+            </VBox>
+        </HBox>
+
+        <!-- MAIN CONTENT -->
+        <VBox alignment="CENTER" style="-fx-background-color: #0e0e0e; -fx-padding: 40 80;" spacing="40">
+
+            <!-- STATS SECTION -->
+            <HBox spacing="40" alignment="CENTER">
+                <VBox alignment="CENTER" spacing="8"
+                      style="-fx-background-color: #1a1a1a; -fx-padding: 25 35; -fx-background-radius: 15; -fx-min-width: 180;">
+                    <Label text="0" style="-fx-font-size: 36px; -fx-text-fill: #2979FF; -fx-font-weight: bold;"/>
+                    <Label text="Total Orders" style="-fx-font-size: 16px; -fx-text-fill: #cfcfcf;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="8"
+                      style="-fx-background-color: #1a1a1a; -fx-padding: 25 35; -fx-background-radius: 15; -fx-min-width: 180;">
+                    <Label text="₱ 0" style="-fx-font-size: 36px; -fx-text-fill: #3ad13a; -fx-font-weight: bold;"/>
+                    <Label text="Total Spent" style="-fx-font-size: 16px; -fx-text-fill: #cfcfcf;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="8"
+                      style="-fx-background-color: #1a1a1a; -fx-padding: 25 35; -fx-background-radius: 15; -fx-min-width: 180;">
+                    <Label text="0" style="-fx-font-size: 36px; -fx-text-fill: #ff6b35; -fx-font-weight: bold;"/>
+                    <Label text="Delivered" style="-fx-font-size: 16px; -fx-text-fill: #cfcfcf;"/>
                 </VBox>
             </HBox>
 
-            <!-- Purchase Card 2 -->
-            <HBox spacing="20" alignment="CENTER_LEFT"
-                  style="-fx-background-color: #3b3333; -fx-padding: 16; -fx-background-radius: 14;"
-                  prefWidth="700" prefHeight="140">
-                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" />
-                <VBox alignment="CENTER_LEFT" spacing="6" prefWidth="500">
-                    <Label text="Grey T-Shirt"
-                           style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
-                    <Label text="₱ 160"
-                           style="-fx-font-size: 18px; -fx-text-fill: #1fb7ff;" />
-                    <Label text="Purchased: October 1, 2025"
-                           style="-fx-font-size: 13px; -fx-text-fill: #cfcfcf;" />
-                    <Label text="Delivered"
-                           style="-fx-font-size: 14px; -fx-text-fill: #3ad13a;" />
-                </VBox>
-            </HBox>
-
-            <!-- Purchase Card 3 -->
-            <HBox spacing="20" alignment="CENTER_LEFT"
-                  style="-fx-background-color: #3b3333; -fx-padding: 16; -fx-background-radius: 14;"
-                  prefWidth="700" prefHeight="140">
-                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" />
-                <VBox alignment="CENTER_LEFT" spacing="6" prefWidth="500">
-                    <Label text="White T-Shirt"
-                           style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
-                    <Label text="₱ 170"
-                           style="-fx-font-size: 18px; -fx-text-fill: #1fb7ff;" />
-                    <Label text="Purchased: October 5, 2025"
-                           style="-fx-font-size: 13px; -fx-text-fill: #cfcfcf;" />
-                    <Label text="Delivered"
-                           style="-fx-font-size: 14px; -fx-text-fill: #3ad13a;" />
-                </VBox>
-            </HBox>
+            <!-- PURCHASE ITEMS CONTAINER -->
+            <VBox fx:id="purchaseItemsContainer" alignment="CENTER" spacing="25"
+                  style="-fx-background-color: #1a1a1a; -fx-padding: 60 40; -fx-background-radius: 20; -fx-max-width: 800;">
+                <Label text="📭" style="-fx-font-size: 80px;"/>
+                <Label text="No purchases yet"
+                       style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Label text="Start shopping to see your orders here!"
+                       style="-fx-font-size: 16px; -fx-text-fill: #B0B0B0; -fx-text-alignment: center;"/>
+                <Button text="🛍️ Start Shopping Now"
+                        onAction="#goShop"
+                        style="-fx-font-size: 16px; -fx-padding: 12 25; -fx-background-color: #2979FF; -fx-text-fill: white; -fx-background-radius: 8;"/>
+            </VBox>
 
         </VBox>
-    </ScrollPane>
 
-    <!-- Close Button -->
-    <Button text="Close"
-            style="-fx-background-color: #2a7bff; -fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 10 30; -fx-background-radius: 10;" />
-</VBox>
+    </VBox>
+</ScrollPane>

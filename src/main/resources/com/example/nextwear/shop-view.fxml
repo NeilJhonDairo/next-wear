@@ -12,6 +12,7 @@
             fitToWidth="true"
             hbarPolicy="NEVER"
             vbarPolicy="AS_NEEDED"
+            stylesheets="@application.css"
             style="-fx-background-color: #0e0e0e;">
 
     <VBox fx:id="mainContent" spacing="0">
@@ -27,11 +28,12 @@
             <Pane HBox.hgrow="ALWAYS"/>
 
             <HBox spacing="20" alignment="CENTER_RIGHT">
-                <Button text="Home" styleClass="nav-btn"/>
-                <Button text="Shop" styleClass="nav-btn-active"/>
-                <Button text="My Purchase" styleClass="nav-btn"/>
-                <Button text="Log Out" styleClass="nav-btn"/>
-                <Button text="🛒" styleClass="cart-btn"/>
+                <Button text="Home" styleClass="nav-btn" onAction="#goHome"/>
+                <Button text="Shop" styleClass="nav-btn-active" onAction="#goShop"/>
+                <Button text="My Purchase" styleClass="nav-btn" onAction="#goPurchase"/>
+                <Button text="Log Out" styleClass="nav-btn" onAction="#logout"/>
+                <Button text="🛒" styleClass="cart-btn" onAction="#openCart"/>
+
             </HBox>
         </HBox>
 
@@ -39,7 +41,7 @@
         <HBox alignment="CENTER"
               style="-fx-background-color: #000000; -fx-padding: 40 80;">
             <VBox alignment="CENTER_LEFT" spacing="6" HBox.hgrow="ALWAYS">
-                <Label text="Shop  Our Latest Tees"
+                <Label text="Shop Our Latest Tees"
                        style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;"/>
                 <Label text="High-Quality. Affordable. Made For You"
                        style="-fx-text-fill: #cfcfcf; -fx-font-size: 14px;"/>
@@ -65,8 +67,9 @@
                             <Image url="@NextWearShopimage/Riseabove.png"/>
                         </image>
                     </ImageView>
-                    <Label text="Rise Above" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: 600;"/>
-                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 25px;"/>
+                    <Label text="Rise Above" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Button text="View Details" styleClass="primary-btn" onAction="#showProductModal"/>
                 </VBox>
 
                 <!-- Product 2 -->
@@ -76,8 +79,9 @@
                             <Image url="@NextWearShopimage/VisionLeaks.png"/>
                         </image>
                     </ImageView>
-                    <Label text="Vision Leaks" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: 600;"/>
-                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 25px;"/>
+                    <Label text="Vision Leaks" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Button text="View Details" styleClass="primary-btn" onAction="#showProductModal"/>
                 </VBox>
 
                 <!-- Product 3 -->
@@ -87,8 +91,9 @@
                             <Image url="@NextWearShopimage/ToyotaAE86.png"/>
                         </image>
                     </ImageView>
-                    <Label text="Toyota AE86" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: 600;"/>
-                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 25px;"/>
+                    <Label text="Toyota AE86" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Button text="View Details" styleClass="primary-btn" onAction="#showProductModal"/>
                 </VBox>
 
                 <!-- Product 4 -->
@@ -98,8 +103,9 @@
                             <Image url="@NextWearShopimage/Nobound.png"/>
                         </image>
                     </ImageView>
-                    <Label text="No Bound" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: 600;"/>
-                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 25px;"/>
+                    <Label text="No Bound" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                    <Label text="₱150" style="-fx-text-fill: #3b82f6; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Button text="View Details" styleClass="primary-btn" onAction="#showProductModal"/>
                 </VBox>
 
             </HBox>
