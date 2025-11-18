@@ -1,70 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <?import javafx.scene.control.Button?>
-    <?import javafx.scene.control.Label?>
-    <?import javafx.scene.layout.HBox?>
-    <?import javafx.scene.layout.Pane?>
-    <?import javafx.scene.layout.VBox?>
-    <?import javafx.scene.image.ImageView?>
-    <?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
-    <VBox xmlns="http://javafx.com/javafx/17"
-          xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="com.example.nextwear.HomepageController"
-          spacing="20"
-          stylesheets="@application.css"
-          style="-fx-background-color: #0E0E0E;">
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.nextwear.HomepageController"
+      spacing="20"
+      stylesheets="@application.css"
+      style="-fx-background-color: #0E0E0E;">
 
+    <!-- NAV BAR -->
+    <HBox spacing="30" alignment="CENTER_LEFT"
+          style="-fx-background-color: #000000; -fx-padding: 20 40;">
 
-
-        <!-- NAV BAR -->
-        <HBox spacing="30" alignment="CENTER_LEFT"
-              style="-fx-background-color: #000000; -fx-padding: 20 40;">
-
-            <!-- LOGO -->
-            <HBox spacing="4" alignment="CENTER_LEFT">
-                <Label text="NEXT" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
-                <Label text="WEAR" style="-fx-text-fill: #2979FF; -fx-font-size: 30px; -fx-font-weight: bold;"/>
-            </HBox>
-
-            <Pane HBox.hgrow="ALWAYS" />
-
-            <!-- NAV BUTTONS -->
-            <HBox spacing="20" alignment="CENTER_RIGHT">
-                <Button text="Home" styleClass="nav-btn-active" onAction="#goHome"/>
-                <Button text="Shop" styleClass="nav-btn" onAction="#goShop"/>
-                <Button text="My Purchase" styleClass="nav-btn" onAction="#goPurchase"/>
-                <Button text="Log Out" styleClass="nav-btn" onAction="#logout"/>
-            </HBox>
+        <!-- LOGO -->
+        <HBox spacing="4" alignment="CENTER_LEFT">
+            <Label text="NEXT" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+            <Label text="WEAR" style="-fx-text-fill: #2979FF; -fx-font-size: 30px; -fx-font-weight: bold;"/>
         </HBox>
 
+        <Pane HBox.hgrow="ALWAYS" />
 
-        <!-- MAIN SECTION -->
-        <HBox spacing="80" alignment="CENTER"
-              style="-fx-padding: 60 80;">
-
-            <!-- LEFT TEXT -->
-            <VBox spacing="25" alignment="CENTER_LEFT">
-                <Label text="Shop Our Latest Tees"
-                       style="-fx-text-fill: white; -fx-font-size: 50px; -fx-font-weight: bold;"
-                       wrapText="true"/>
-
-                <Label text="High-Quality. Affordable. Made For You."
-                       style="-fx-text-fill: #B0B0B0; -fx-font-size: 20px;"/>
-
-                <Button text="See Products"
-                        style="-fx-background-color: #2979FF; -fx-text-fill: white;
-                               -fx-padding: 15 40; -fx-font-size: 18px; -fx-background-radius: 10;"/>
-            </VBox>
-
-            <!-- RIGHT IMAGE -->
-            <ImageView fitWidth="600"
-                       preserveRatio="true"
-                       smooth="true">
-                <image>
-                    <Image url="@NextWearShopimage/Nexthome.png"/>
-                </image>
-            </ImageView>
+        <!-- NAV BUTTONS -->
+        <HBox spacing="20" alignment="CENTER_RIGHT">
+            <Button text="Home" styleClass="nav-btn-active" onAction="#goHome"/>
+            <Button text="Shop" styleClass="nav-btn" onAction="#goShop"/>
+            <Button text="My Purchase" styleClass="nav-btn" onAction="#goPurchase"/>
+            <Button text="Log Out" styleClass="nav-btn" onAction="#logout"/>
         </HBox>
+    </HBox>
 
-    </VBox>
+    <!-- MAIN CONTENT -->
+    <HBox spacing="50" alignment="CENTER" style="-fx-padding: 20;">
+        <!-- LEFT TEXT -->
+        <VBox spacing="25" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS" style="-fx-padding: 0 0 0 40;">
+            <Label text="Shop Our Latest Tees"
+                   style="-fx-text-fill: white; -fx-font-size: 50px; -fx-font-weight: bold;"
+                   wrapText="true"/>
+
+            <Label text="High-Quality. Affordable. Made For You."
+                   style="-fx-text-fill: #B0B0B0; -fx-font-size: 20px;"/>
+
+            <Button text="See Products"
+                    style="-fx-background-color: #2979FF; -fx-text-fill: white;
+                           -fx-padding: 15 40; -fx-font-size: 18px; -fx-background-radius: 10;"/>
+        </VBox>
+
+        <!-- RIGHT IMAGE -->
+        <ImageView fitWidth="500"
+                   preserveRatio="true"
+                   smooth="true">
+            <image>
+                <Image url="@NextWearShopimage/Nexthome.png"/>
+            </image>
+        </ImageView>
+    </HBox>
+</VBox>

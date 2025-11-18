@@ -18,6 +18,9 @@ import java.util.*;
 
 public class PurchaseController {
 
+    private static final double WINDOW_WIDTH = 1280;
+    private static final double WINDOW_HEIGHT = 720;
+
     // Store purchase history
     private static List<PurchaseOrder> purchaseHistory = new ArrayList<>();
 
@@ -61,6 +64,7 @@ public class PurchaseController {
         loadPurchaseHistory();
     }
 
+    // Goes back to login page
     @FXML
     private void logout(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -70,8 +74,26 @@ public class PurchaseController {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            showInfoAlert("Logged Out", "You have been successfully logged out!");
-            goHome(event);
+            try {
+                System.out.println("Logout pressed from Purchase - Returning to Login");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/nextwear/login-view.fxml"));
+                Parent root = loader.load();
+
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+                // Add CSS
+                scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
+
+                stage.setScene(scene);
+                stage.setMaximized(false);
+                stage.centerOnScreen();
+                stage.show();
+
+            } catch (Exception e) {
+                System.out.println("❌ Error during logout: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
     }
 
@@ -229,9 +251,14 @@ public class PurchaseController {
     private void navigateTo(String fxmlFile, ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+            // Add CSS
+            scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setMaximized(true);
             stage.show();
             System.out.println("✅ Navigated to: " + fxmlFile);
         } catch (Exception e) {
@@ -240,7 +267,7 @@ public class PurchaseController {
         }
     }
 
-    // ✅ FIXED: STATIC METHOD TO ADD ORDERS FROM CART
+    // STATIC METHOD TO ADD ORDERS FROM CART
     public static void addOrderFromCart(String customerName, String phone, String address,
                                         String paymentMethod, double total, Map<String, Object> cartItems) {
 
@@ -252,7 +279,7 @@ public class PurchaseController {
             if (entry.getValue() instanceof ShopController.CartItem) {
                 ShopController.CartItem cartItem = (ShopController.CartItem) entry.getValue();
 
-                // ✅ FIXED: Calculate price properly
+                // Calculate price properly
                 double itemTotal = 0;
                 try {
                     String priceStr = cartItem.getPrice().replace("₱", "").trim();
@@ -275,8 +302,8 @@ public class PurchaseController {
                         phone
                 );
 
-                // ✅ FIXED: Add the order object to history
-                purchaseHistory.add(0, order); // Add to beginning (most recent first)
+                // Add the order object to history
+                purchaseHistory.add(0, order);
             }
         }
 

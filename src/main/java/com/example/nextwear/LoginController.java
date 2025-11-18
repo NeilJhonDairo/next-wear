@@ -11,37 +11,56 @@ import java.io.IOException;
 
 public class LoginController {
 
+    private static final double WINDOW_WIDTH = 1280;
+    private static final double WINDOW_HEIGHT = 720;
+
     @FXML
     private void onLogin(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/nextwear/homepage-view.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        // Create scene
-        Scene scene = new Scene(root, 1280, 720);
-
-        // ADD CSS PROPERLY HERE
-        scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
-
-        stage.setScene(scene);
-        stage.show();
-        stage.setMaximized(true);
-        stage.centerOnScreen();
+        loadScene("/com/example/nextwear/homepage-view.fxml", event, true);
     }
-
-
-
-
-
 
     @FXML
     private void onForgotPassword(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/nextwear/forgot-password.fxml"));
+        loadScene("/com/example/nextwear/forgot-password.fxml", event, false);
+    }
 
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root, 500, 400)); // ✔ centered small window
-        stage.centerOnScreen();
-        stage.show();
+    // Add this method for Sign Up
+    @FXML
+    private void onSignup(ActionEvent event) throws IOException {
+        loadScene("/com/example/nextwear/sign-up-view.fxml", event, true);
+    }
+
+    private void loadScene(String fxmlPath, ActionEvent event, boolean fullscreen) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+
+            //  Check if the file exists
+            if (loader.getLocation() == null) {
+                System.out.println("❌ File not found: " + fxmlPath);
+                return;
+            }
+
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+            // Add CSS
+            scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
+
+            stage.setScene(scene);
+
+            if (fullscreen) {
+                stage.setMaximized(true);
+            } else {
+                stage.setMaximized(false);
+                stage.centerOnScreen();
+            }
+
+            stage.show();
+            System.out.println("✅ Successfully loaded: " + fxmlPath);
+
+        } catch (IOException e) {
+        }
     }
 }

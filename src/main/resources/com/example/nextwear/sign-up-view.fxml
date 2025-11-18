@@ -2,70 +2,67 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/17"
-      xmlns:fx="http://javafx.com/fxml"
-      alignment="CENTER"
-      spacing="30"
-      prefWidth="1080"
-      prefHeight="1920"
-      style="-fx-background-color: white;">
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.nextwear.SignupController"
+            prefWidth="1920"
+            prefHeight="1080"
+            style="-fx-background-color: white;">
 
+    <center>
+        <VBox alignment="CENTER" spacing="28" maxWidth="400">
+            <!-- Logo - Consistent sa imong login page -->
+            <TextFlow textAlignment="CENTER">
+                <Text text="NEXT" style="-fx-fill: black; -fx-font-size: 40px; -fx-font-weight: bold;"/>
+                <Text text="WEAR" style="-fx-fill: #2979FF; -fx-font-size: 40px; -fx-font-weight: bold;"/>
+            </TextFlow>
 
-    <TextFlow textAlignment="CENTER">
-        <Text text="NEXT" fill="black"
-              style="-fx-font-size: 36px; -fx-font-weight: bold;" />
-        <Text text="WEAR" fill="#007bff"
-              style="-fx-font-size: 36px; -fx-font-weight: bold;" />
-    </TextFlow>
+            <!-- Sign Up Form -->
+            <VBox spacing="8" alignment="CENTER_LEFT" maxWidth="360">
+                <TextField fx:id="fullNameField" promptText="Full Name"
+                           prefWidth="320" prefHeight="38"
+                           style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 3; -fx-font-size: 13px;"/>
 
+                <TextField fx:id="emailField" promptText="Email"
+                           prefWidth="320" prefHeight="38"
+                           style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 3; -fx-font-size: 13px;"/>
 
-    <VBox alignment="CENTER" spacing="16" maxWidth="400">
+                <PasswordField fx:id="passwordField" promptText="Password"
+                               prefWidth="320" prefHeight="38"
+                               style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 3; -fx-font-size: 13px;"/>
 
-        <TextField fx:id="usernameField"
-                   promptText="Username"
-                   prefWidth="400" prefHeight="40"
-                   style="-fx-border-color: #000000;
-                          -fx-border-radius: 5;
-                          -fx-background-radius: 5;
-                          -fx-focus-color: transparent;" />
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"
+                               prefWidth="320" prefHeight="38"
+                               style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 3; -fx-font-size: 13px;"/>
 
-        <TextField fx:id="emailField"
-                   promptText="Email"
-                   prefWidth="400" prefHeight="40"
-                   style="-fx-border-color: #000000;
-                          -fx-border-radius: 5;
-                          -fx-background-radius: 5;
-                          -fx-focus-color: transparent;" />
+                <!-- Action Buttons -->
+                <HBox spacing="8" alignment="CENTER_RIGHT" prefWidth="320">
+                    <Button text="Sign Up"
+                            onAction="#onSignup"
+                            prefWidth="90" prefHeight="32"
+                            style="-fx-background-color: black; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                </HBox>
+            </VBox>
 
-        <PasswordField fx:id="passwordField"
-                       promptText="Password"
-                       prefWidth="400" prefHeight="40"
-                       style="-fx-border-color: #000000;
-                              -fx-border-radius: 5;
-                              -fx-background-radius: 5;
-                              -fx-focus-color: transparent;" />
+            <!-- Already have account -->
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="Already have an account?" style="-fx-text-fill: #555555; -fx-font-size: 13px;"/>
+                <Hyperlink text="Log In"
+                           onAction="#onBackToLogin"
+                           style="-fx-text-fill: #2979FF; -fx-font-size: 13px; -fx-border-color: transparent;"/>
+            </HBox>
 
-        <Button text="Sign Up"
-                prefWidth="400" prefHeight="40"
-                style="-fx-background-color: black;
-                       -fx-text-fill: white;
-                       -fx-font-weight: bold;
-                       -fx-background-radius: 5;" />
-
-        <HBox alignment="CENTER" spacing="5">
-            <Label text="Already have an account?"
-                   style="-fx-text-fill: #555555; -fx-font-size: 12px;" />
-            <Hyperlink text="Log In"
-                       style="-fx-text-fill: #007bff; -fx-font-size: 12px;" />
-        </HBox>
-
-    </VBox>
-
-    <!-- Footer -->
-    <Label text="©2025 NEXTWEAR. All Rights Reserved."
-           alignment="CENTER"
-           style="-fx-text-fill: gray; -fx-font-size: 11px;" />
-
-</VBox>
+            <!-- Footer - Consistent sa imong login page -->
+            <Label text="©2025 NEXTWEAR. All Rights Reserved."
+                   style="-fx-text-fill: gray; -fx-font-size: 12px;"
+                   alignment="CENTER">
+                <padding>
+                    <Insets top="40"/>
+                </padding>
+            </Label>
+        </VBox>
+    </center>
+</BorderPane>

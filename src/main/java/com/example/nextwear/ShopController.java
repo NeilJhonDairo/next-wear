@@ -24,6 +24,9 @@ import java.util.Map;
 
 public class ShopController {
 
+    private static final double WINDOW_WIDTH = 1280;
+    private static final double WINDOW_HEIGHT = 720;
+
     @FXML
     private ScrollPane scrollPane;
 
@@ -34,7 +37,6 @@ public class ShopController {
     private Map<String, CartItem> cart = new HashMap<>();
     private int cartItemCount = 0;
 
-    // ✅ FIXED: Make CartItem public and static
     public static class CartItem {
         private String productName;
         private String price;
@@ -355,7 +357,7 @@ public class ShopController {
         return selected != null ? selected.getText() : "Cash on Delivery";
     }
 
-    // ✅ FIXED: PROCESS ORDER METHOD (with PurchaseController integration)
+    // PROCESS ORDER METHOD
     private void processOrder(String name, String phone, String address, String payment, double total) {
         // Convert cart to simple map for PurchaseController
         Map<String, Object> cartItemsMap = new HashMap<>();
@@ -363,7 +365,7 @@ public class ShopController {
             cartItemsMap.put(entry.getKey(), entry.getValue());
         }
 
-        // ✅ ADD THIS LINE - Send order to purchase history
+        // Send order to purchase history
         PurchaseController.addOrderFromCart(name, phone, address, payment, total, cartItemsMap);
 
         // Clear cart
@@ -402,17 +404,43 @@ public class ShopController {
         loadPage("purchase-item-view.fxml", event);
     }
 
+    //Goes back to login page
     @FXML
     private void logout(ActionEvent event) {
-        System.out.println("Logout pressed from Shop");
+        try {
+            System.out.println("Logout pressed from Shop - Returning to Login");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/nextwear/login-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+            // Add CSS
+            scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setMaximized(false); // Dili fullscreen ang login
+            stage.centerOnScreen();
+            stage.show();
+
+        } catch (Exception e) {
+            System.out.println("❌ Error during logout: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     // NAVIGATION METHOD
     private void loadPage(String fxmlFile, ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+            // Add CSS
+            scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(scene);
+            stage.setMaximized(true);
             stage.show();
             System.out.println("✅ Successfully navigated to: " + fxmlFile);
         } catch (Exception e) {

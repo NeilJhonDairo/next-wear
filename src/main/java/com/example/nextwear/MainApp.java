@@ -16,7 +16,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
 
-        // SET TO MAXIMIZED WINDOW
+
         primaryStage.setMaximized(true);
 
         primaryStage.setScene(scene);

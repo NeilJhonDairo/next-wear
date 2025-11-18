@@ -11,6 +11,9 @@ import java.io.IOException;
 
 public class ForgotPasswordController {
 
+    private static final double WINDOW_WIDTH = 1280;
+    private static final double WINDOW_HEIGHT = 720;
+
     @FXML
     private void onSendResetLink(ActionEvent event) {
         System.out.println("Reset link sent!");
@@ -22,12 +25,13 @@ public class ForgotPasswordController {
         Parent root = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
 
+        // Add CSS
+        scene.getStylesheets().add(getClass().getResource("/com/example/nextwear/application.css").toExternalForm());
 
-        Scene scene = new Scene(root, 1920, 1080);
         stage.setScene(scene);
         stage.setMaximized(true);
-        stage.centerOnScreen();
         stage.show();
     }
 }
